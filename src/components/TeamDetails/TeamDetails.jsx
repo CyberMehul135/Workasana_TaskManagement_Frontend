@@ -1,6 +1,7 @@
 import { CopyMinus, Mail, Plus, Users } from "lucide-react";
 import ProfileBadge from "../Badges/ProfileBadge";
 import Button from "../Buttons/Button";
+import TeamDetailsLoading from "../Loadings/TeamDetailsLoading";
 
 export default function TeamDetails({
   data,
@@ -9,7 +10,7 @@ export default function TeamDetails({
   onClickAddMembers,
   onClickDeleteMembers,
 }) {
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <TeamDetailsLoading />;
   if (error) return <p>Error...</p>;
   if (data) {
     return (

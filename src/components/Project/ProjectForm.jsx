@@ -12,6 +12,7 @@ export default function ProejctForm() {
     isProjectFormVisible,
     resetProjectForm,
   } = useProjectFormContext();
+  const { projectCreateLoading, projectCreateError } = useProjectContext();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function ProejctForm() {
       submitBtnLabel="Create"
       onCloseBtnClick={() => setIsProjectFormVisible(false)}
       onSubmit={handleSubmit}
+      loading={projectCreateLoading}
     >
       <Input
         label="Project Name"

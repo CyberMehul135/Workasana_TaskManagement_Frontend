@@ -15,6 +15,9 @@ export const ProjectProvider = ({ children }) => {
   const [projectsLoading, setProjectLoading] = useState(false);
   const [projectsError, setProjectError] = useState(null);
 
+  const [projectCreateLoading, setProjectCreateLoading] = useState(false);
+  const [projectCreateError, setProjectCreateError] = useState(null);
+
   const [projectDeleteLoading, setProjectDeleteLoading] = useState(false);
   const [projectDeleteError, setProjectDeleteError] = useState(null);
 
@@ -54,15 +57,17 @@ export const ProjectProvider = ({ children }) => {
 
   const create = async (project) => {
     try {
-      setProjectLoading(true);
-      setProjectError(null);
+      setProjectCreateLoading(true);
+      setProjectCreateError(null);
 
       await createProject(project);
       await fetchProjects();
     } catch (err) {
-      handleError(err);
+      setProjectCreateError(
+        err.response?.data?.message || err.message || "Something went wrong"
+      );
     } finally {
-      setProjectLoading(false);
+      setProjectCreateLoading(false);
     }
   };
 
@@ -107,6 +112,8 @@ export const ProjectProvider = ({ children }) => {
         projectDetails,
         projectDetailsLoading,
         projectDetailsError,
+        projectCreateLoading,
+        projectCreateError,
       }}
     >
       {children}

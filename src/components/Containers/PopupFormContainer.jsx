@@ -9,6 +9,7 @@ export default function PopupFormContainer({
   title,
   onCloseBtnClick,
   submitBtnLabel,
+  loading,
 }) {
   return (
     <form
@@ -38,7 +39,10 @@ export default function PopupFormContainer({
 
         {/* Footer */}
         <div className="p-5 bg-surface-white border-t border-border-primary">
-          <Button label={submitBtnLabel} className="justify-center" />
+          <Button
+            label={loading ? "Loading..." : submitBtnLabel}
+            className="justify-center"
+          />
         </div>
       </div>
     </form>

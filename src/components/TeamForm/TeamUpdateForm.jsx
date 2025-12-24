@@ -1,3 +1,4 @@
+import { useTeamContext } from "../../contexts/TeamContext";
 import { useTeamUpdateFormContext } from "../../contexts/TeamUpdateFormContext";
 import PopupFormContainer from "../Containers/PopupFormContainer";
 import Checkboxes from "../inputs/Checkboxes";
@@ -12,6 +13,7 @@ export default function TeamUpdateForm({
     teamUpdateForm,
     handleTeamUpdateFormOnChange,
   } = useTeamUpdateFormContext();
+  const { teamUpdateLoading } = useTeamContext();
 
   return (
     <>
@@ -21,6 +23,7 @@ export default function TeamUpdateForm({
         submitBtnLabel="Add"
         onCloseBtnClick={() => setIsTeamUpdateFormVisible(false)}
         onSubmit={handleTeamUpdateFormSubmit}
+        loading={teamUpdateLoading}
       >
         {/* Checkboxes */}
         <div>

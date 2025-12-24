@@ -13,8 +13,14 @@ import { useTeamUpdateFormContext } from "../contexts/TeamUpdateFormContext";
 export default function Team() {
   const navigate = useNavigate();
   const { teamId } = useParams();
-  const { teamDetails, fetchTeamById, teamsFetchLoading, teamsError, update } =
-    useTeamContext();
+  const {
+    teamDetails,
+    fetchTeamById,
+    teamsFetchLoading,
+    teamsError,
+    update,
+    teamCreateLoading,
+  } = useTeamContext();
   const { owners, ownersFetchLoading, ownersError } = useOwnersContext();
   const {
     setIsTeamUpdateFormVisible,

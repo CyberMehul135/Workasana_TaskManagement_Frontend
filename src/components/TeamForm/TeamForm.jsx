@@ -1,3 +1,4 @@
+import { useTeamContext } from "../../contexts/TeamContext";
 import { useTeamFormContext } from "../../contexts/TeamFormContext";
 import PopupFormContainer from "../Containers/PopupFormContainer";
 import Checkboxes from "../inputs/Checkboxes";
@@ -10,6 +11,7 @@ export default function TeamForm({ members, handleTeamFormSubmit }) {
     teamForm,
     handleTeamFormOnChange,
   } = useTeamFormContext();
+  const { teamCreateLoading } = useTeamContext();
 
   return (
     <>
@@ -19,6 +21,7 @@ export default function TeamForm({ members, handleTeamFormSubmit }) {
         submitBtnLabel="Create"
         onCloseBtnClick={() => setIsTeamFormVisible(false)}
         onSubmit={handleTeamFormSubmit}
+        loading={teamCreateLoading}
       >
         <Input
           label="Name"

@@ -24,7 +24,7 @@ export const TeamProvider = ({ children }) => {
 
   const fetchTeams = async () => {
     try {
-      setTeamsFetchLoading(false);
+      setTeamsFetchLoading(true);
       setTeamsError(null);
 
       const res = await getTeams();
@@ -52,7 +52,7 @@ export const TeamProvider = ({ children }) => {
 
   const create = async (team) => {
     try {
-      setTeamCreateLoading(false);
+      setTeamCreateLoading(true);
       setTeamsError(null);
 
       await createTeam(team);
@@ -111,7 +111,9 @@ export const TeamProvider = ({ children }) => {
         teamsFetchLoading,
         teamsError,
         create,
+        teamCreateLoading,
         update,
+        teamUpdateLoading,
         remove,
         teamDetails,
         fetchTeamById,

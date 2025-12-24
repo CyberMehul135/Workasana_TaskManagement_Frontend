@@ -7,7 +7,7 @@ import { useTaskContext } from "../../contexts/TaskContext";
 import { useProjectContext } from "../../contexts/ProjectContext";
 
 export default function TaskForm({ projects, teams, owners, tags }) {
-  const { create } = useTaskContext();
+  const { create, taskCreateLoading } = useTaskContext();
   const {
     isTaskFormVisible,
     taskForm,
@@ -33,6 +33,7 @@ export default function TaskForm({ projects, teams, owners, tags }) {
       submitBtnLabel="Create"
       onCloseBtnClick={() => setIsTaskFormVisible(false)}
       onSubmit={handleSubmit}
+      loading={taskCreateLoading}
     >
       <Input
         label="Task Name"

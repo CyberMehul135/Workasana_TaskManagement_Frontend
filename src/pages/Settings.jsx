@@ -1,4 +1,3 @@
-import { FolderPen } from "lucide-react";
 import Button from "../components/Buttons/Button";
 import Header from "../components/Header/Header";
 import Heading1 from "../components/Headings/Heading1";
