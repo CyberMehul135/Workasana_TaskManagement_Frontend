@@ -106,7 +106,12 @@ export default function Reports() {
                       data: taskClosedByTeams?.tasks?.map(
                         (v) => v.totalClosedTasks
                       ),
-                      backgroundColor: ["#2463EB", "#F59F0A"],
+                      backgroundColor: [
+                        "#9C2AD5",
+                        "#2463EB",
+                        "#F59F0A",
+                        "#16A249",
+                      ],
                       borderRadius: 5,
                       hoverOffset: 4,
                     },
