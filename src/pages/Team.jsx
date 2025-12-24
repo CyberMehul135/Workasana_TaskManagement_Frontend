@@ -16,7 +16,7 @@ export default function Team() {
   const {
     teamDetails,
     fetchTeamById,
-    teamsFetchLoading,
+    teamDetailsFetchingLoading,
     teamsError,
     update,
     teamCreateLoading,
@@ -62,7 +62,7 @@ export default function Team() {
 
         <TeamDetails
           data={teamDetails?.team}
-          loading={teamsFetchLoading}
+          loading={teamDetailsFetchingLoading}
           error={teamsError}
           onClickAddMembers={() => setIsTeamUpdateFormVisible(true)}
           onClickDeleteMembers={handleOnClickDeleteMembers}

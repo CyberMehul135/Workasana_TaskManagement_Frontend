@@ -16,6 +16,9 @@ export const TeamProvider = ({ children }) => {
   const [teamDetails, setTeamDetails] = useState({});
 
   const [teamsFetchLoading, setTeamsFetchLoading] = useState(false);
+  const [teamDetailsFetchingLoading, setTeamDetailsFetchingLoading] = useState(
+    {}
+  );
   const [teamCreateLoading, setTeamCreateLoading] = useState(false);
   const [teamUpdateLoading, setTeamUpdateLoading] = useState(false);
   const [teamDeleteLoading, setTeamDeleteLoading] = useState(false);
@@ -38,7 +41,7 @@ export const TeamProvider = ({ children }) => {
 
   const fetchTeamById = async (id) => {
     try {
-      setTeamsFetchLoading(false);
+      setTeamDetailsFetchingLoading(true);
       setTeamsError(null);
 
       const res = await getTeamById(id);
@@ -46,7 +49,7 @@ export const TeamProvider = ({ children }) => {
     } catch (err) {
       hanndleError(err);
     } finally {
-      setTeamsFetchLoading(false);
+      setTeamDetailsFetchingLoading(false);
     }
   };
 
@@ -116,6 +119,7 @@ export const TeamProvider = ({ children }) => {
         teamUpdateLoading,
         remove,
         teamDetails,
+        teamDetailsFetchingLoading,
         fetchTeamById,
       }}
     >
