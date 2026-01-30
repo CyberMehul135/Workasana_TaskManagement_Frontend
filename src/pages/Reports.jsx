@@ -26,7 +26,7 @@ export default function Reports() {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const chartData = days.map((day) => {
     const found = lastWeekCompletedTasks?.tasks?.find(
-      (item) => item.day === day
+      (item) => item.day === day,
     );
     return found ? found.count : 0;
   });
@@ -71,14 +71,14 @@ export default function Reports() {
               <Bar
                 data={{
                   labels: projectWisePendingdays?.data?.map(
-                    (project) => project.projectName
+                    (project) => project.projectName,
                   ),
                   datasets: [
                     {
                       axis: "y",
                       label: "Pending Days",
                       data: projectWisePendingdays?.data?.map(
-                        (project) => project.totalPendingDays
+                        (project) => project.totalPendingDays,
                       ),
                       backgroundColor: ["#F59F0A"],
                       borderRadius: 5,
@@ -104,7 +104,7 @@ export default function Reports() {
                     {
                       label: "Closed Tasks",
                       data: taskClosedByTeams?.tasks?.map(
-                        (v) => v.totalClosedTasks
+                        (v) => v.totalClosedTasks,
                       ),
                       backgroundColor: [
                         "#9C2AD5",
@@ -134,7 +134,7 @@ export default function Reports() {
                     {
                       label: "Closed Tasks",
                       data: taskClosedByOwner?.tasks?.map(
-                        (v) => v.totalClosedTasks
+                        (v) => v.totalClosedTasks,
                       ),
                       backgroundColor: ["#16A249"],
                       borderRadius: 5,
@@ -159,7 +159,7 @@ export default function Reports() {
                     {
                       label: "Closed Tasks",
                       data: taskClosedByProject?.tasks?.map(
-                        (v) => v.totalClosedTasks
+                        (v) => v.totalClosedTasks,
                       ),
                       backgroundColor: ["#9C2AD5"],
                       borderRadius: 5,

@@ -18,13 +18,13 @@ export default function DashboardCharts() {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const tasksCreated = days.map((day) => {
     const found = lastWeekCreatedAndCompletedTasks?.tasks?.find(
-      (item) => item.day === day
+      (item) => item.day === day,
     );
     return found ? found.created : 0;
   });
   const tasksCompleted = days.map((day) => {
     const found = lastWeekCreatedAndCompletedTasks?.tasks?.find(
-      (item) => item.day === day
+      (item) => item.day === day,
     );
     return found ? found.completed : 0;
   });
