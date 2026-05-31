@@ -44,7 +44,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-4 ">
           <Brand className="box-content size-5 p-2 rounded-xl bg-surface-blue-400" />
           <h2 className="text-[21px] font-semibold tracking-wider text-text-black">
-            Workasana
+            TaskHive 
           </h2>
         </div>
         <X

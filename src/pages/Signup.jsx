@@ -10,7 +10,7 @@ export default function Signup() {
           <div className="h-full flex flex-col items-center justify-center">
             <LoginHeader
               heading="Create your account"
-              subHeading="Start managing tasks with Workasana"
+              subHeading="Start managing tasks with TaskHive"
               icon={Logo}
             />
             <SignupForm />

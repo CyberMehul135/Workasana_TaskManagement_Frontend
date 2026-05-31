@@ -9,7 +9,7 @@ export default function Login() {
         <div className="w-full h-full max-w-[1600px]">
           <div className="h-full flex flex-col items-center justify-center">
             <LoginHeader
-              heading="Welcome to Worksana"
+              heading="Welcome to TaskHive"
               subHeading="Sign in to manage your tasks"
               icon={Logo}
             />

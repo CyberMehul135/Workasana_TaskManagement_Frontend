@@ -32,7 +32,7 @@ export default function Header() {
     <header className="hidden z-10 px-8 py-3 max-sm:fixed top-0 w-full bg-surface-white max-lg:flex max-sm:text-xl max-sm:px-4 max-sm:h-20 items-center justify-between gap-5 h-16 font-semibold border border-border-primary">
       <div className="flex items-center gap-3">
         <Brand className="box-content px-3 py-2 w-5 bg-surface-blue-400 rounded-xl" />
-        <h1 className="tracking-wider text-text-black-400">Workasana</h1>
+        <h1 className="tracking-wider text-text-black-400">TaskHive</h1>
       </div>
       <Menu
         className="w-5 max-sm:w-7 cursor-pointer"
