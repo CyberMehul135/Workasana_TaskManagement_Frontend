@@ -1,4 +1,4 @@
-# Workasana ( Task Management App )
+# Task Hive ( Task Management App )
 
 Workasana is a full-stack task management application for creating, assigning, and tracking tasks across projects.
 It supports real-time task status updates, priorities, and filtering for better team productivity.
